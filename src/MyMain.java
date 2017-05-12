@@ -1,3 +1,8 @@
+import pojo.Gameplay;
+import pojo.Gametype;
+import service.GameplayService;
+import service.GameplayServiceImpl;
+
 import java.util.Scanner;
 
 /**
@@ -20,5 +25,15 @@ public class MyMain {
             System.out.println(gamePlay.convertToString());
         }
         System.out.println("Thanks for Plalying");
+
+        /****************************/
+
+
+        GameplayService gameplayService = new GameplayServiceImpl();
+        Gametype gametype = new Gametype();
+        Gameplay gameplay = gameplayService.createGame();
+        gameplayService.play(gameplay);
+
+        System.out.println(gameplay.getWinner());
     }
 }

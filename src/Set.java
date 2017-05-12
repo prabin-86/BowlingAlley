@@ -8,13 +8,21 @@ public class Set {
     private ArrayList<Character> moves;
     private Scorable scorable;
     private SetType setType;
-
+    private boolean isCurrent;
     private int currentScore = 0;
 
     Set(Scorable scorable, SetType setType) {
         this.scorable = scorable;
         this.moves = new ArrayList<Character>();
         this.setType = setType;
+    }
+
+    public boolean isCurrent() {
+        return isCurrent;
+    }
+
+    public void setCurrent(boolean current) {
+        isCurrent = current;
     }
 
     public String convertToString() {
